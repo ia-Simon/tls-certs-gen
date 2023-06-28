@@ -7,14 +7,12 @@ init:
 	echo "GENERATED AUTOMATICALLY; DO NOT EDIT OR DELETE" > init
 
 run: init
-	cd testca
-	make ca-cert-gen
+	cd testca && make ca-cert-gen
 
-	cd ../server
-	make prvkey-gen
+	cd server && make prvkey-gen
 	
-	cd ../testca
-	make server-cert-gen
+	cd testca && make server-cert-gen
 
 clean:
 	git reset --hard HEAD
+	git clean -fd
