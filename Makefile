@@ -13,6 +13,7 @@ run: init
 	
 	cd testca && make server-cert-gen
 
+	echo "GENERATED AUTOMATICALLY; DO NOT EDIT OR DELETE" > run
+
 clean:
-	git reset --hard HEAD
 	git clean -fd
