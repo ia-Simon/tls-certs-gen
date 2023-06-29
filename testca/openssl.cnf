@@ -35,6 +35,10 @@ default_md = sha256
 prompt = yes
 distinguished_name = root_ca_distinguished_name
 x509_extensions = root_ca_extensions
+req_extensions = req_exts
+
+[ req_exts ]
+subjectAltName = DNS:localhost
 
 [ root_ca_distinguished_name ]
 commonName = hostname
@@ -47,8 +51,10 @@ keyUsage = keyCertSign, cRLSign
 basicConstraints = CA:false
 keyUsage = digitalSignature,keyEncipherment
 extendedKeyUsage = 1.3.6.1.5.5.7.3.2
+subjectAltName = DNS:localhost
 
 [ server_ca_extensions ]
 basicConstraints = CA:false
 keyUsage = digitalSignature,keyEncipherment
 extendedKeyUsage = 1.3.6.1.5.5.7.3.1
+subjectAltName = DNS:localhost
